@@ -20,6 +20,6 @@ My development workflow is AI-assisted, using prompts to generate and iterate on
 - For this project, image generation was used for product images using Meta.ai
 - AI-assisted development /w Microsoft GitHub Copilot using VSCODE
 - HTML, CSS, and JS are used
-- Website is responsive for Mobile
+- Responsive for Mobile
 
 ![Figma Design](preview/workflow-preview.png)
