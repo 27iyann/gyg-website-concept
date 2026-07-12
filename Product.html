@@ -16,14 +16,20 @@
 					<div class="logo">
 						<img class="logo-mark" src="./assets/gyg_logo_2.png" alt="GyG logo">
 						<div class="logo-text">Get Your Gear</div>
-					</div>
-				</div>
+					</div>				<button class="nav-toggle-btn" type="button" aria-expanded="false" aria-controls="product-nav-links">
+					<span class="nav-toggle-icon"></span>
+					<span class="visually-hidden">Menu</span>
+				</button>				</div>
 				<div class="nav-center">
-					<div class="nav-links center-links">
+					<div class="nav-links center-links" id="product-nav-links">
+						<div class="mobile-nav-top">
+							<div class="mobile-logo-text">Get Your Gear</div>
+						</div>
 						<a href="index.html">Home</a>
 						<a href="Product.html">Products</a>
 						<a href="#">What's New?</a>
 						<a href="#">About</a>
+						<a class="login-link" href="#">Login</a>
 					</div>
 				</div>
 				<div class="nav-right">
@@ -187,6 +193,7 @@
 				</div>
 			</div>
 		</section>
+		<script src="./js/product-nav.js"></script>
 		<script src="./js/popular.js"></script>
 		<script src="./js/most sold.js"></script>
 	</body>
