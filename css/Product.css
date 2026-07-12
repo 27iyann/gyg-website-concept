@@ -37,15 +37,143 @@ body.product-page {
 .logo-text{font-weight:600}
 .nav-links{display:flex;gap:18px;align-items:center}
 .nav-links a{color:inherit;text-decoration:none;padding:6px 4px}
+/* Hide login link (in-dropdown) on desktop; show only on mobile */
+.login-link{display:none}
+/* Hide mobile-only header row on desktop; shown in mobile media query */
+.mobile-nav-top{display:none}
+.nav-toggle-btn{
+	display:none;
+	background:transparent;
+	border:none;
+	padding:10px;
+	cursor:pointer;
+}
+.nav-toggle-icon{
+	display:block;
+	width:24px;
+	height:2px;
+	background:#222;
+	position: relative;
+	z-index: 1301;
+	position:relative;
+}
+.nav-toggle-icon::before,
+.nav-toggle-icon::after{
+	content:'';
+	position:absolute;
+	left:0;
+	width:24px;
+	height:2px;
+	background:#222;
+}
+.nav-toggle-icon::before{top:-7px;}
+.nav-toggle-icon::after{top:7px;}
+.visually-hidden{
+	border:0;
+	clip:rect(0 0 0 0);
+	clip-path: inset(50%);
+	height:1px;
+	margin:-1px;
+	overflow:hidden;
+	padding:0;
+	position:absolute;
+	white-space:nowrap;
+	width:1px;
+}
 .nav-center{justify-content:center}
 .login-btn{
 		border:1px solid #222;background:transparent;padding:8px 14px;border-radius:18px;cursor:pointer;
 }
 
 @media (max-width: 700px){
-	.nav{grid-template-columns: auto 1fr auto;gap:10px}
-	.nav-center{display:none}
+	.nav{
+		position: relative;
+		grid-template-columns: 1fr;
+		gap: 12px;
+		padding: 14px 16px;
+	}
+	.nav-left{
+		justify-content: space-between;
+		width: 100%;
+	}
+	.nav-toggle-btn{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		z-index: 1301;
+	}
+
+	/* Mobile nav top row (logo + login) inside overlay */
+	.mobile-nav-top{
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		padding: 6px 4px 14px 4px;
+		border-bottom: 1px solid rgba(0,0,0,0.06);
+		margin-bottom: 12px;
+	}
+	.mobile-logo-text{
+		font-weight:600;
+		font-size:18px;
+		color:#222;
+	}
+	.login-btn{
+		background: transparent;
+		border: 1px solid rgba(0,0,0,0.08);
+		padding:6px 12px;
+		border-radius:8px;
+		font-size:14px;
+		cursor:pointer;
+	}
+	.nav-center{
+		position: relative;
+		width: 100%;
+	}
+	.nav-links{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: calc(60vh - 150px);
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: flex-start;
+		display: none;
+		margin: 0;
+		padding: 22px 18px 12px;
+		border-radius: 0;
+		background: #ffffff;
+		box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+		z-index: 1200;
+		transform: translateY(-8px);
+		transition: transform 320ms ease, opacity 220ms ease;
+		opacity: 0;
+	}
+	.nav-links.open{
+		display: flex;
+		transform: translateY(0);
+		opacity: 1;
+	}
+	.nav-links a{
+		padding: 14px 0;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+		text-align: center;
+	}
+		/* show login item inside mobile menu, hide right-header login */
+		.login-link{display:block;padding:14px 0;text-align:center;color:inherit;text-decoration:none}
+		.nav-right .login-btn{display:none}
+	.nav-links a:last-child{
+		border-bottom: none;
+	}
+	.nav-right{
+		justify-content: flex-end;
+		width: 100%;
+	}
 	.nav-left .logo-mark{height:32px}
+		/* Hide header logo text on small screens since it's included inside overlay */
+		.logo-text{display:none}
 }
 
 
