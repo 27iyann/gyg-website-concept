@@ -42,7 +42,7 @@
   height: 0;
   overflow: hidden;
   transform: translateY(24px);
-  transition: opacity 5s ease, transform 5s ease, height 5s ease;
+  transition: opacity 3s ease, transform 3s ease, height 3s ease;
 }
 
 .slide.active {
