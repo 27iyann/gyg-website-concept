@@ -1,6 +1,6 @@
 ## Preview
 
-<img src="preview/figma_design.png" width="400">
+<img src="https://raw.githubusercontent.com/27iyann/gyg-website-concept/main/preview/figma_design.png" width="400">
 
 ## Get Your Gear: From Design Concept to Web Development
 **Get Your Gear** is a sports and pickleball-focused e-commerce website showcasing a modern, responsive front-end experience. The project was designed in Figma and developed with the assistance of GitHub Copilot to transform the design into a functional web prototype. It features a home landing page and a products page.
@@ -22,4 +22,4 @@ My development workflow is AI-assisted, using prompts to generate and iterate on
 - HTML, CSS, and JS are used
 - Website is responsive for Mobile
 
-![Figma Design](preview/workflow-preview.png)
+<img src="https://raw.githubusercontent.com/27iyann/gyg-website-concept/main/preview/workflow-preview.png" width="900">
