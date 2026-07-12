@@ -9,7 +9,7 @@
 - Live Demo (GitHub Pages): https://27iyann.github.io/gyg-website-concept/
 
 ## About the Developer
-I am a Graphic Designer who leverages on AI tools like GitHub Copilot to streamline web development and transform design concepts into functional, interactive prototypes. I have hands-on experience with HTML and CSS and a growing understanding of front-end development.
+I am a Graphic Designer who leverages on AI tools like GitHub Copilot to streamline web development and transform design concepts into functional, interactive prototypes.
 
 My development workflow is AI-assisted, using prompts to generate and iterate on code time efficiently. Rather than writing every line manually, I guide the AI through multiple iterations and manually intervene when needed to troubleshoot issues, refine functionality, modify the generated code, and ensure the final implementation aligns with the intended design. This approach allows me to combine my design concepts with AI-assisted development to create and build prototypes.
 
