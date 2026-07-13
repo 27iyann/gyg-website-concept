@@ -2,6 +2,12 @@
 html, body {
 	height: 100%;
 	margin: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
 }
 
 body.product-page {
@@ -87,10 +93,21 @@ body.product-page {
 
 @media (max-width: 700px){
 	.nav{
-		position: relative;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 56px;
 		grid-template-columns: 1fr;
 		gap: 12px;
-		padding: 14px 16px;
+		padding: 10px 16px;
+		background: rgba(255,255,255,0.96);
+		backdrop-filter: blur(10px);
+		z-index: 1300;
+	}
+	body.product-page {
+		padding-top: 56px;
 	}
 	.nav-left{
 		justify-content: space-between;
@@ -104,14 +121,19 @@ body.product-page {
 		z-index: 1301;
 	}
 
-	/* Mobile nav top row (logo + login) inside overlay */
+	/* Mobile nav top row (logo + brand) inside overlay */
 	.mobile-nav-top{
+		display:none;
+	}
+	.mobile-nav-brand{
 		display:flex;
-		justify-content:space-between;
 		align-items:center;
-		padding: 6px 4px 14px 4px;
-		border-bottom: 1px solid rgba(0,0,0,0.06);
-		margin-bottom: 12px;
+		justify-content:center;
+		gap: 10px;
+	}
+	.mobile-logo-mark{
+		height: 28px;
+		width: auto;
 	}
 	.mobile-logo-text{
 		font-weight:600;
@@ -132,23 +154,23 @@ body.product-page {
 	}
 	.nav-links{
 		position: fixed;
-		top: 0;
+		top: 56px;
 		left: 0;
-		right: 0;
-		width: 100%;
-		height: calc(60vh - 150px);
+		width: 100vw;
+		max-height: calc(60vh - 150px);
+		overflow: auto;
 		flex-direction: column;
 		align-items: stretch;
 		justify-content: flex-start;
 		display: none;
 		margin: 0;
-		padding: 22px 18px 12px;
+		padding: 0;
 		border-radius: 0;
 		background: #ffffff;
-		box-shadow: 0 24px 60px rgba(0,0,0,0.18);
-		z-index: 1200;
-		transform: translateY(-8px);
-		transition: transform 320ms ease, opacity 220ms ease;
+		box-shadow: none;
+		z-index: 1299;
+		transform: none;
+		transition: opacity 220ms ease, max-height 320ms ease;
 		opacity: 0;
 	}
 	.nav-links.open{
@@ -157,13 +179,15 @@ body.product-page {
 		opacity: 1;
 	}
 	.nav-links a{
-		padding: 14px 0;
+		display: block;
+		padding: 14px 20px;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 		text-align: center;
 	}
 		/* show login item inside mobile menu, hide right-header login */
 		.login-link{display:block;padding:14px 0;text-align:center;color:inherit;text-decoration:none}
 		.nav-right .login-btn{display:none}
+		.logo-text{display:block}
 	.nav-links a:last-child{
 		border-bottom: none;
 	}
@@ -172,8 +196,6 @@ body.product-page {
 		width: 100%;
 	}
 	.nav-left .logo-mark{height:32px}
-		/* Hide header logo text on small screens since it's included inside overlay */
-		.logo-text{display:none}
 }
 
 
